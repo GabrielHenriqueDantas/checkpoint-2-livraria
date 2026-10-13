@@ -1,21 +1,23 @@
 package br.com.fiap.entities;
 
-import java.time.LocalDate;
-
 public class Autor {
 
-    // visibilidade, tipo de dados e atributos
-
+    // Atributos
     private String nome;
     private String nacionalidade;
     private String email;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
 
-    public Autor() {
+    // Construtor
+    public Autor(String nome, String nacionalidade,
+                 String email, String dataNascimento) {
+        this.nome = nome;
+        this.nacionalidade = nacionalidade;
+        this.email = email;
+        this.dataNascimento = dataNascimento;
     }
 
-    // metodos getters e setters
-
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -40,12 +42,22 @@ public class Autor {
         this.email = email;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Autor" +
+                "\nNome: " + nome +
+                "\nNacionalidade: " + nacionalidade +
+                "\nEmail: " + email +
+                "\nData de nascimento: " + dataNascimento;
     }
 }
 

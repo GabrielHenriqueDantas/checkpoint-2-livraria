@@ -2,14 +2,19 @@ package br.com.fiap.entities;
 
 public class Livro {
 
-    // visibilidade, tipo de dados e atributos
+    // Atributos
     private String titulo;
     private double preco;
-    private Autor autor; // atributo de referencia
-    //private Editora editora; // atributo de referencia
+    private Autor autor;
+    private Editora editora;
 
-    // metodos getters e setters
+    // Construtor
+    public Livro(String titulo, double preco) {
+        this.titulo = titulo;
+        this.preco = preco;
+    }
 
+    // Getters e Setters
     public String getTitulo() {
         return titulo;
     }
@@ -34,11 +39,21 @@ public class Livro {
         this.autor = autor;
     }
 
-    //public Editora getEditora() {
-    //    return editora;
-    //}
+    public Editora getEditora() {
+        return editora;
+    }
 
-    //public void setEditora(Editora editora) {
-    //   this.editora = editora;
-    //}
+    public void setEditora(Editora editora) {
+        this.editora = editora;
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return " LIVRO " +
+                "\nTítulo: " + titulo +
+                "\nPreço: R$ " + preco +
+                "\n\nAutor: " + autor +
+                "\n\nEditora: " + editora;
+    }
 }
